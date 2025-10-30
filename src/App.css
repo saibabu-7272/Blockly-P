@@ -1,38 +1,117 @@
+html, body, #root, .App {
+  width: 100%;
+  height: 100%;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #f6f7fb;
+}
+
+.map-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 16px;
+  color: #222222;
 }
 
-.App-link {
-  color: #61dafb;
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 960px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.row.gap {
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.progress {
+  width: 100%;
+}
+
+.btn {
+  background: #0f62fe;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.speed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.speed .label {
+  font-size: 14px;
+  color: #333333;
+}
+
+.speed .value {
+  font-size: 14px;
+  color: #333333;
+  min-width: 36px;
+  text-align: right;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #222222;
+  font-size: 14px;
+}
+
+.meta-item {
+  background: #f2f4f8;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+@media (max-width: 768px) {
+  .controls { width: 94%; padding: 12px; border-radius: 10px; }
+  .row.gap { flex-wrap: wrap; gap: 8px; }
+  .btn { padding: 8px 12px; }
 }
